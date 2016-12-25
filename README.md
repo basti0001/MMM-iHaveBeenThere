@@ -80,17 +80,10 @@ sry code will be committed. Just be a little patient.
 			</td>
 		</tr>
 		<tr>
-			<td><code>home_lat</code></td>
-			<td>Latitude of the your home.<br>
+			<td><code>home_lat, home_lon</code></td>
+			<td>Latitude/longitude of the your home.<br>
 				<br><b>Values:</b> <code>float</code>
-				<br><b>Default value:</b> <code>48.1548256</code>for munich.
-			</td>
-		</tr>
-		<tr>
-			<td><code>home_lon</code></td>
-			<td>Longitude of your home.<br>
-				<br><b>Values:</b> <code>float</code>
-				<br><b>Default value:</b> <code>11.4017537</code>for munich.
+				<br><b>Default value:</b> e.g. lat <code>48.1548256</code>for munich.
 			</td>
 		</tr>
 		<tr>
@@ -101,14 +94,8 @@ sry code will be committed. Just be a little patient.
 			</td>
 		</tr>
 		<tr>
-			<td><code>away_lat</code></td>
-			<td>Latitude of destinations you have visited.<br>
-				<br><b>Values:</b> <code>array[float]</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>away_lon</code></td>
-			<td>Longitude of destinations you have visited.<br>
+			<td><code>away_lat, away_lon</code></td>
+			<td>Latitude/longitude of destinations you have visited.<br>
 				<br><b>Values:</b> <code>array[float]</code>
 			</td>
 		</tr>
@@ -125,24 +112,10 @@ sry code will be committed. Just be a little patient.
 			</td>
 		</tr>
 		<tr>
-			<td><code>colorCountries</code></td>
-			<td>Fill color of the countries.<br>
+			<td><code>colorCountries, colorCountryBorders, colorTargetPoints, colorPlaneLine, colorLegendBorder, colorLegendFont, colorTitleFont</code></td>
+			<td>Colors for country fill, country border, target points, plane, legend, legend font, title.<br>
 				<br><b>Value:</b> <code>string</code>
-				<br><b>Default value:</b> <code>"#BDBDBD"</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>colorCountryBorders</code></td>
-			<td>Color of the country border lines.<br>
-				<br><b>Value:</b> <code>string</code>
-				<br><b>Default value:</b> <code>"#BDBDBD"</code>
-			</td>
-		</tr>
-		<tr>
-			<td><code>colorTargetPoints, colorPlaneLine, colorLegendBorder, colorLegendFont, colorTitleFont</code></td>
-			<td>Color of the country border lines.<br>
-				<br><b>Value:</b> <code>string</code>
-				<br><b>Default value:</b> <code>"#BDBDBD"</code>
+				<br><b>Default value:</b> e.g.<code>"#BDBDBD"</code>
 			</td>
 		</tr>
 
