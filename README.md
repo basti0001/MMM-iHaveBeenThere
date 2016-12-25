@@ -33,73 +33,119 @@ sry code will be committed. Just be a little patient.
 		<tr>
 			<td><code>title</code></td>
 			<td>The title of the world chart.<br>
-				<br><b>Possible values:</b> <code>string</code>, see <i>MMM-iHaveBeenThere configuration</i> below.
+				<br><b>Values:</b> <code>string</code>, see <i>MMM-iHaveBeenThere configuration</i> below.
 				<br><b>Default value:</b> <i>An example world.</i>
 			</td>
 		</tr>
 		<tr>
 			<td><code>AnimationEnabled</code></td>
 			<td>enable/disable the plane animation.<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
+				<br><b>Values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>true</code>
 			</td>
 		</tr>
 		<tr>
 			<td><code>pauseDuration</code></td>
 			<td>Time in s how long the plane stays at a point if animation is enabled.<br>
-				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Values:</b> <code>0.0</code> or <code>any</code>
 				<br><b>Default value:</b> <code>3.0</code>
 			</td>
 		</tr>
 		<tr>
 			<td><code>animationDuration</code></td>
 			<td>Time in s how long the plane flies from point to point if animation is enabled.<br>
-				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Values:</b> <code>0.0</code> or <code>any</code>
 				<br><b>Default value:</b> <code>10.0</code>
 			</td>
 		</tr>
 		<tr>
 			<td><code>zoomLevel</code></td>
 			<td>Set map region parameter.<br>
-				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
-				<br><b>Default value:</b> <code>5.4</code>For central europe.
+				<br><b>Values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Default value:</b> <code>5.4</code>for central europe.
 			</td>
 		</tr>
 		<tr>
 			<td><code>zoomLongitude</code></td>
 			<td>Set map region parameter.<br>
-				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
-				<br><b>Default value:</b> <code>-2.0</code>For central europe.
+				<br><b>Values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Default value:</b> <code>-2.0</code>for central europe.
 			</td>
 		</tr>
 		<tr>
 			<td><code>animationDuration</code></td>
 			<td>Set map region parameter.<br>
-				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
-				<br><b>Default value:</b> <code>46.0</code>For central europe.
+				<br><b>Values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Default value:</b> <code>46.0</code>for central europe.
 			</td>
 		</tr>
 		<tr>
 			<td><code>home_lat</code></td>
 			<td>Latitude of the your home.<br>
-				<br><b>Possible values:</b> <code>float</code>
-				<br><b>Default value:</b> <code>48.1548256</code>For munich.
+				<br><b>Values:</b> <code>float</code>
+				<br><b>Default value:</b> <code>48.1548256</code>for munich.
 			</td>
 		</tr>
 		<tr>
 			<td><code>home_lon</code></td>
 			<td>Longitude of your home.<br>
-				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
-				<br><b>Default value:</b> <code>11.4017537</code>For munich.
+				<br><b>Values:</b> <code>float</code>
+				<br><b>Default value:</b> <code>11.4017537</code>for munich.
 			</td>
 		</tr>
 		<tr>
 			<td><code>home_desc</code></td>
 			<td>Your Homename.<br>
-				<br><b>Possible values:</b> <code>string</code>
+				<br><b>Values:</b> <code>string</code>
 				<br><b>Default value:</b> <code>"München"</code>For munich.
 			</td>
 		</tr>
+		<tr>
+			<td><code>away_lat</code></td>
+			<td>Latitude of destinations you have visited.<br>
+				<br><b>Values:</b> <code>array[float]</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>away_lon</code></td>
+			<td>Longitude of destinations you have visited.<br>
+				<br><b>Values:</b> <code>array[float]</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>away_desc</code></td>
+			<td>City/Country names of destinations you have visited.<br>
+				<br><b>Values:</b> <code>array[string]</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>trip</code></td>
+			<td>Controls if every single entry is counted as a new jurney or a round trip.<br>
+				<br><b>Values:</b> <code>array[bool]</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>colorCountries</code></td>
+			<td>Fill color of the countries.<br>
+				<br><b>Value:</b> <code>string</code>
+				<br><b>Default value:</b> <code>"#BDBDBD"</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>colorCountryBorders</code></td>
+			<td>Color of the country border lines.<br>
+				<br><b>Value:</b> <code>string</code>
+				<br><b>Default value:</b> <code>"#BDBDBD"</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>colorTargetPoints, colorPlaneLine, colorLegendBorder, colorLegendFont, colorTitleFont</code></td>
+			<td>Color of the country border lines.<br>
+				<br><b>Value:</b> <code>string</code>
+				<br><b>Default value:</b> <code>"#BDBDBD"</code>
+			</td>
+		</tr>
+
 	</tbody>
 </table>
 
