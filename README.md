@@ -33,7 +33,7 @@ sry code will be committed. Just be a little patient.
 		<tr>
 			<td><code>title</code></td>
 			<td>The title of the world chart.<br>
-				<br><b>Possible values:</b>string, see <i>MMM-iHaveBeenThere configuration</i> below.
+				<br><b>Possible values:</b> <code>string</code>, see <i>MMM-iHaveBeenThere configuration</i> below.
 				<br><b>Default value:</b> <i>An example world.</i>
 			</td>
 		</tr>
@@ -79,6 +79,27 @@ sry code will be committed. Just be a little patient.
 				<br><b>Default value:</b> <code>46.0</code>For central europe.
 			</td>
 		</tr>
+		<tr>
+			<td><code>home_lat</code></td>
+			<td>Latitude of the your home.<br>
+				<br><b>Possible values:</b> <code>float</code>
+				<br><b>Default value:</b> <code>48.1548256</code>For munich.
+			</td>
+		</tr>
+		<tr>
+			<td><code>home_lon</code></td>
+			<td>Longitude of your home.<br>
+				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Default value:</b> <code>11.4017537</code>For munich.
+			</td>
+		</tr>
+		<tr>
+			<td><code>home_desc</code></td>
+			<td>Your Homename.<br>
+				<br><b>Possible values:</b> <code>string</code>
+				<br><b>Default value:</b> <code>"München"</code>For munich.
+			</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -122,7 +143,7 @@ Pi's I recommend to disable the animation or set
 		</tr>
 		<tr>
 			<td><code>animationDuration</code></td>
-			<td><br><b>value:</b> <code>3.0</code></td>
+			<td><b>value:</b> <code>3.0</code></td>
 		</tr>
 	</tbody>
 </table>
