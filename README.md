@@ -9,7 +9,7 @@ Since at present I use additional non free js code, I have to check the license 
 sry code will be committed. Just be a little patient.
 
 ##Dependencies
-- [MagigMirror](https://github.com/MichMich/MagicMirror)
+- [MagicMirror](https://github.com/MichMich/MagicMirror)
 - [Amcharts](https://www.amcharts.com/demos/)
 
 
@@ -33,7 +33,7 @@ sry code will be committed. Just be a little patient.
 		<tr>
 			<td><code>title</code></td>
 			<td>The title of the world chart.<br>
-				<br><b>Possible values:</b> An array, see <i>MMM-iHaveBeenThere configuration</i> below.
+				<br><b>Possible values:</b>string, see <i>MMM-iHaveBeenThere configuration</i> below.
 				<br><b>Default value:</b> <i>An example world.</i>
 			</td>
 		</tr>
@@ -45,10 +45,17 @@ sry code will be committed. Just be a little patient.
 			</td>
 		</tr>
 		<tr>
-			<td><code>displaySymbol</code></td>
-			<td>Display a symbol in front of an entry.<br>
-				<br><b>Possible values:</b> <code>true</code> or <code>false</code>
-				<br><b>Default value:</b> <code>true</code>
+			<td><code>pauseDuration</code></td>
+			<td>Time in s how long the plane stays at a point if animation is enabled.<br>
+				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Default value:</b> <code>3.0</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>animationDuration</code></td>
+			<td>Time in s how long the plane flies from point to point if animation is enabled.<br>
+				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Default value:</b> <code>10.0</code>
 			</td>
 		</tr>
 		<tr>
@@ -151,6 +158,41 @@ modules: [
 	}
 ]
 ````
+Depending on the used (Raspberry Pi)[https://de.wikipedia.org/wiki/Raspberry_Pi] hardware I recommend to disable the plane animation (though it looks nice). 
+The modells A, B, B+ run only contain a single CPU core. I tried the B+ with 1Ghz (overclocking). The CPU load was at 100% and the animation laged.
+Also I used (MMM-FRITZ-Box-Callmonitor)[https://github.com/paviro/MMM-FRITZ-Box-Callmonitor] and was missing incoming calls with this setup. For this mentioned
+Pi's I recommend to disable the animation or set
+<table width="100%">
+	<!-- why, markdown... -->
+	<thead>
+		<tr>
+			<th>Option</th>
+			<th width="100%">Description</th>
+		</tr>
+	<thead>
+	<tbody>
+		<tr>
+			<td><code>AnimationEnabled</code></td>
+			<td><b>value:</b> <code>true</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>pauseDuration</code></td>
+			<td><br>
+				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>value:</b> <code>3.0</code>
+			</td>
+		</tr>
+		<tr>
+			<td><code>animationDuration</code></td>
+			<td>Time in s how long the plane flies from point to point if animation is enabled.<br>
+				<br><b>Possible values:</b> <code>0.0</code> or <code>any</code>
+				<br><b>Default value:</b> <code>10.0</code>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
 
 The MIT License (MIT)
 =====================
