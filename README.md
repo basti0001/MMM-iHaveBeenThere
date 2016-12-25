@@ -5,6 +5,9 @@ It can draw a worldmap or a world section with points of interest (poi). The poi
 linked with a line and an animated plane can fly from the your home origin to you poi where you have been.
 This can be used to show your traveled places in the world. Pretty fancy ;-)
 
+![alt tag](https://raw.githubusercontent.com/basti0001/MMM-iHaveBeenThere/master/picture/example.png)
+
+
 Since at present I use additional non free js code, I have to check the license situation first. Depending on this, the
 sry code will be committed. Just be a little patient.
 
