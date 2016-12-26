@@ -9,11 +9,11 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
 
 
 Since at present I use additional non free js code, I have to check the license situation first. Depending on this, the
-sry code will be committed. Just be a little patient.
+src code will be committed. Just be a little patient.
 
 ##Dependencies
-- [MagicMirror](https://github.com/MichMich/MagicMirror)
 - [Amcharts](https://www.amcharts.com/demos/)
+- [MagicMirror, many thanks to Martynas Majeris](https://github.com/MichMich/MagicMirror)
 
 
 ## Installation
