@@ -2,7 +2,7 @@
  * Module: MMM-iHaveBeenThere
  * 
  * By Sebastian Merkel
- * ??? Licensed.
+ * MIT Licensed.
  */
 Module.register("MMM-iHaveBeenThere",{
 
