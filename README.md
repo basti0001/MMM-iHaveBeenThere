@@ -7,7 +7,7 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
 
 ![alt tag](https://raw.githubusercontent.com/basti0001/MMM-iHaveBeenThere/master/picture/example.png)
 
-##Dependencies
+## Dependencies
 - [Amcharts](https://www.amcharts.com/demos/), many thanks to Martynas Majeris
 - [MagicMirror](https://github.com/MichMich/MagicMirror)
 
