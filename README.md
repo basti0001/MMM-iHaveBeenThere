@@ -105,6 +105,11 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
 			</td>
 		</tr>
 		<tr>
+			<td><code>displayDesc</code></td>
+			<td>Display the descriptions of the destinations you have visited<br>
+				<br><b>Default value:</b> <code>true</code></td>
+		</tr>
+		<tr>
 			<td><code>trip</code></td>
 			<td>Controls if every single entry is counted as a new jurney or a round trip.<br>
 				<br><b>Values:</b> <code>array[bool]</code>
