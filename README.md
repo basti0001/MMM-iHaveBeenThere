@@ -107,6 +107,7 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
 		<tr>
 			<td><code>displayDesc</code></td>
 			<td>Display the descriptions of the destinations you have visited<br>
+				<br><b>Values:</b> <code>true</code> or <code>false</code>
 				<br><b>Default value:</b> <code>true</code></td>
 		</tr>
 		<tr>
