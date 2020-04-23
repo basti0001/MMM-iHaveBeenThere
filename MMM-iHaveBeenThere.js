@@ -1,6 +1,6 @@
 /** Magic Mirror
  * Module: MMM-iHaveBeenThere
- * 
+ *
  * By Sebastian Merkel
  * MIT Licensed.
  */
@@ -11,17 +11,17 @@ Module.register("MMM-iHaveBeenThere",{
 		title : "My Holidays",
 		AnimationEnabled	: true,		//enable / disable the plane animation
 		pauseDuration		: 3.0,		//plane at point time in s
-		animationDuration	: 10.0,		//plane in air duration in s, raspberry pi A, B, B+ is really slow and lags in the 
+		animationDuration	: 10.0,		//plane in air duration in s, raspberry pi A, B, B+ is really slow and lags in the
 							            //anmation. On Modell 2 & 3 one may set on 2.5s.
-		
+		displayDesc: true,      // display the names of destinations
 		zoomLevel: 4.5,			//central europe
 		zoomLongitude: -2,		//central europe
 		zoomLatitude: 46,		//central europe
-		
+
 		home_lat: 	48.1548256,
 		home_lon:	11.4017537,
 		home_desc:	"München",
-		
+
 		away_lat:	[
 		         	 48.8588377,
 		         	 51.5285582,
@@ -40,14 +40,14 @@ Module.register("MMM-iHaveBeenThere",{
 		          	 "Bukarest 2010",
 		          	 "Istanbul 2010"
 		          	 ],
-		          	 
-      	trip:		[ 
+
+      	trip:		[
       	     		  false,
       	     		  false,
       	     		  false,
       	     		  true
       	     		 ],
-		          
+
 		colorCountries:			"#BDBDBD",
 		colorCountryBorders:	"#000000",
       	colorTargetPoints: 		"#FFFFFF",
@@ -57,26 +57,26 @@ Module.register("MMM-iHaveBeenThere",{
 		colorLegendFont:		"#FFFFFF",
 		colorTitleFont:			"#FFFFFF"
 	},
-	
+
 	// Define required scripts.
 	getScripts: function() {
 		return [
-		        this.file('ammap/ammap.js'),
-		        this.file('ammap/maps/js/worldLow.js'),
+		        this.file("ammap/ammap.js"),
+		        this.file("ammap/maps/js/worldLow.js"),
 		        ];
 	},
-	
+
 	// Override dom generator.
 	getDom: function() {
 		var wrapper = document.createElement("div");
-		
+
 		wrapper.style.width = "100%";
 		wrapper.style.height = "700px";
 		wrapper.id = "MapDiv";
-		
-    return wrapper;
+
+		return wrapper;
 	},
-	
+
 	//function to create the legend and its items
 	createLegend: function() {
 		var legend = {
@@ -90,22 +90,22 @@ Module.register("MMM-iHaveBeenThere",{
 		        horizontalGap: 10,
 		        useMarkerColorForLabels: true,
 		        data: []
-			}
-		
+		}
+
 		for (var i = 0; i < this.arrayLength; i++) {
-			
+
 			var LegendItem = {
-								title: this.config.away_desc[i],
-								markerType: "none",
-								color: this.config.colorLegendFont
+				title: this.config.away_desc[i],
+				markerType: "none",
+				color: this.config.colorLegendFont
             				};
-			
+
 			legend.data.push(LegendItem);
 		}
-		
+
 		return legend;
 	},
-	
+
 	//creates the lat coordinates
 	createLinesLat: function() {
 		var lat = [];
@@ -114,11 +114,11 @@ Module.register("MMM-iHaveBeenThere",{
 				lat.push(this.config.away_lat[i-1]);
 			else
 				lat.push(this.config.home_lat);
-			lat.push(this.config.away_lat[i]);	
+			lat.push(this.config.away_lat[i]);
 		}
 		return lat;
 	},
-	
+
 	//creates the lon coordinates
 	createLinesLon: function() {
 		var lon = [];
@@ -131,7 +131,7 @@ Module.register("MMM-iHaveBeenThere",{
 		}
 		return lon;
 	},
-	
+
 	//creates all lines of the map
 	createLines: function() {
 		var lines = [
@@ -152,13 +152,13 @@ Module.register("MMM-iHaveBeenThere",{
 		];
 		return lines;
 	},
-	
+
 	//creates all images of the map
 	createImages: function() {
 		var images = [];
 		//add home image
 		var home = {
-				svgPath: this.targetSVG,
+			svgPath: this.targetSVG,
 	            title: this.config.home_desc,
 	            //label: "zu Hause",
 	            color: this.config.colorTargetPoints,
@@ -167,12 +167,12 @@ Module.register("MMM-iHaveBeenThere",{
 	            longitude: this.config.home_lon
 		};
 		images.push(home);
-		
+
 		//add destination images
 		for (var i = 0; i < this.arrayLength; i++) {
 		//for (var i = 0; i < 2; i++) {
 			var dest = {
-					svgPath: this.targetSVG,
+				svgPath: this.targetSVG,
 		            title: this.config.away_desc[i],
 		            //label: "zu Hause",
 		            color: this.config.colorTargetPoints,
@@ -182,7 +182,7 @@ Module.register("MMM-iHaveBeenThere",{
 			}
 			images.push(dest);
 		};
-		
+
 		//plane shadow
 		if (this.config.AnimationEnabled == true){
 			var planeShadow = {
@@ -198,7 +198,7 @@ Module.register("MMM-iHaveBeenThere",{
 		        positionScale: 1.3
 	          };
 			images.push(planeShadow);
-			
+
 			//plane in the air
 		    var plane = {
 	    		svgPath: this.planeSVG,
@@ -216,32 +216,37 @@ Module.register("MMM-iHaveBeenThere",{
 		}
 		return images;
 	},
-	
+
 	start: function() {
 		var MyMapPaintDelay_ms	= 100;					//delay for painting the map. 300ms needed for pi b+
-		
-		//calc min number from away_lat, away_lon and away_desc 
+
+		//calc min number from away_lat and away_lon 
 		//later we only take as much elements as the smallest array contains in order not
 		//to get a array access violation
 		this.arrayLength = Math.min(
-				this.config.away_lat.length, 
-				this.config.away_lon.length, 
-				this.config.away_desc.length);
-		
+			this.config.away_lat.length,
+			this.config.away_lon.length);
+
+		// if we are displaying the descriptions, include it in minimum size calculations
+		// this removes the need to include the descriptions if you aren't showing them
+		if (this.config.displayDesc) {
+			this.arrayLength = Math.min(this.config.away_desc.length, this.arrayLength);
+		}
+
 		//setting plant and target svg's
 		this.targetSVG 	= "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
 		this.planeSVG 	= "m2,106h28l24,30h72l-44,-133h35l80,132h98c21,0 21,34 0,34l-98,0 -80,134h-35l43,-133h-71l-24,30h-28l15,-47";
-		
+
 		//creating lines
 		var MyLines 	= this.createLines();
 		//creating images
 		var MyImages	= this.createImages();
-		
+
 		//create map
 		var MyMap = AmCharts.makeChart("MapDiv", {
-            type: "map",
-            //fontFamily: "Roboto",
-            handDrawn: true,
+			type: "map",
+			//fontFamily: "Roboto",
+			handDrawn: true,
 	        zoomControl: {
 	        	homeButtonEnabled: false,
 				panControlEnabled: false,
@@ -256,30 +261,32 @@ Module.register("MMM-iHaveBeenThere",{
 				images: MyImages
 			},
 			areasSettings: {
-                //color of countries
-                unlistedAreasColor: this.config.colorCountries,
-                unlistedAreasAlpha: 0.5,
-                //color of country border lines
-                unlistedAreasOutlineColor: this.config.colorCountryBorders
-            },
+				//color of countries
+				unlistedAreasColor: this.config.colorCountries,
+				unlistedAreasAlpha: 0.5,
+				//color of country border lines
+				unlistedAreasOutlineColor: this.config.colorCountryBorders
+			},
 
-            imagesSettings: {
-                //color of the points on the map
-                color: this.config.colorTargetPionts,
-                selectedColor: "#585869",
-                pauseDuration: this.config.pauseDuration,
-                animationDuration: this.config.animationDuration,
-                adjustAnimationSpeed: false
-            },
+			imagesSettings: {
+				//color of the points on the map
+				color: this.config.colorTargetPionts,
+				selectedColor: "#585869",
+				pauseDuration: this.config.pauseDuration,
+				animationDuration: this.config.animationDuration,
+				adjustAnimationSpeed: false
+			},
 
-            linesSettings: {
-                color: this.config.colorPlaneLine,
-                alpha: 0.4
-            }
+			linesSettings: {
+				color: this.config.colorPlaneLine,
+				alpha: 0.4
+			}
 		}, MyMapPaintDelay_ms);
-		
+
 		//add legend to map
-		MyMap.addLegend(this.createLegend());
+		if (this.config.displayDesc) {
+			MyMap.addLegend(this.createLegend());
+		}
 		//add title
 		MyMap.addTitle(this.config.title, 25, this.config.colorTitleFont, 1.0, true);
 	},
