@@ -131,17 +131,37 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
 
 To use this module, add it to the modules array in the `config/config.js` file:
 ````javascript
-modules: [
-	{
-		module: 'MMM-iHaveBeenThere',
-		position: 'lower_third',	// bigger place is recommended.
-		config: {
-			// The config property is optional.
-			// If no config is set, an example MMM-iHaveBeenThere is shown.
-			// See 'Configuration options' for more information.
-		}
+{
+	module: "MMM-iHaveBeenThere",
+	position: "middle_center",
+	config: {
+		title: "Dork the Explorer",
+		home_desc: "Edinburgh",
+		AnimationEnabled: true,
+		zoomLevel: 1.1,
+		zoomLongitude: 15,
+		home_lat: 55.9411289,
+		home_lon: -3.3454172,
+		displayDesc: true,
+		away_desc: [
+			"Thailand",
+			"France",
+			"United States"
+		],
+		away_lat: [
+			13.5485582,
+			48.8587741,
+			47.6129432,
+		],
+		away_lon: [
+			100.6111107,
+			2.2069809,
+			-122.4821436,
+		],
+		trip: [false,true,false],
 	}
-]
+},
+
 ````
 Depending on the used [Raspberry Pi](https://de.wikipedia.org/wiki/Raspberry_Pi) hardware I recommend to disable the plane animation (though it looks nice). 
 The modells A, B, B+ run only contain a single CPU core. I tried the B+ with 1Ghz (overclocking). The CPU load was at 100% and the animation laged.
@@ -173,6 +193,9 @@ Pi's I recommend to disable the animation or set
 </table>
 This should give the Pi a little space betweent the animations. Not a pretty good solution, but during the animation you might have problems. 
 With a Pi 3 I had a load of 40% when the animation is running. Dualcore pays off. Also the animation is smooth.
+
+Testing the animation with a Pi 4 resulted in smooth animation. The CPU load was approximately 43%, so be aware that this may conflict
+with other modules that have high CPU demands.
 
 
 The MIT License (MIT)
