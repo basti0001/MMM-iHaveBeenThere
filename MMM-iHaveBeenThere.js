@@ -1,4 +1,5 @@
-/** Magic Mirror
+/*
+ * MagicMirror²
  * Module: MMM-iHaveBeenThere
  *
  * By Sebastian Merkel
@@ -9,14 +10,14 @@ Module.register("MMM-iHaveBeenThere",{
 	// Default module config.
 	defaults: {
 		title : "My Holidays",
-		AnimationEnabled	: true,		//enable / disable the plane animation
-		pauseDuration		: 3.0,		//plane at point time in s
-		animationDuration	: 10.0,		//plane in air duration in s, raspberry pi A, B, B+ is really slow and lags in the
-							            //anmation. On Modell 2 & 3 one may set on 2.5s.
-		displayDesc: true,      // display the names of destinations
-		zoomLevel: 4.5,			//central europe
-		zoomLongitude: -2,		//central europe
-		zoomLatitude: 46,		//central europe
+		AnimationEnabled	: true,	// enable / disable the plane animation
+		pauseDuration		: 3.0,		// plane at point time in s
+		animationDuration	: 10.0,	// plane in air duration in s, raspberry pi A, B, B+ is really slow and lags in the
+															// anmation. On Modell 2 & 3 one may set on 2.5s.
+		displayDesc: true,				// display the names of destinations
+		zoomLevel: 4.5,						// central europe
+		zoomLongitude: -2,				// central europe
+		zoomLatitude: 46,					// central europe
 
 		home_lat: 	48.1548256,
 		home_lon:	11.4017537,
@@ -48,22 +49,22 @@ Module.register("MMM-iHaveBeenThere",{
       	     		  true
       	     		 ],
 
-		colorCountries:			"#BDBDBD",
+		colorCountries:				"#BDBDBD",
 		colorCountryBorders:	"#000000",
-      	colorTargetPoints: 		"#FFFFFF",
-		colorPlane: 			"#FF0000",
-		colorPlaneLine:			"#FFFFFF",
+		colorTargetPoints: 		"#FFFFFF",
+		colorPlane: 					"#FF0000",
+		colorPlaneLine:				"#FFFFFF",
 		colorLegendBorder:		"#FFFFFF",
-		colorLegendFont:		"#FFFFFF",
-		colorTitleFont:			"#FFFFFF"
+		colorLegendFont:			"#FFFFFF",
+		colorTitleFont:				"#FFFFFF"
 	},
 
 	// Define required scripts.
 	getScripts: function() {
 		return [
-		        this.file("ammap/ammap.js"),
-		        this.file("ammap/maps/js/worldLow.js"),
-		        ];
+		        this.file("node_modules/ammap3/ammap/ammap.js"),
+		        this.file("node_modules/ammap3/ammap/maps/js/worldLow.js"),
+					];
 	},
 
 	// Override dom generator.
