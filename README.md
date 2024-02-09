@@ -20,7 +20,7 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
    ```bash
    cd ~/MagicMirror/modules
    git clone https://github.com/basti0001/MMM-iHaveBeenThere
-   cd MMM-ImagesPhotos
+   cd MMM-iHaveBeenThere
    npm install
    ```
 
