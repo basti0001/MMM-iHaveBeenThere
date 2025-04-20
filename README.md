@@ -11,7 +11,7 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
 ## Dependencies
 
 - [Amcharts](https://www.amcharts.com/demos/), many thanks to Martynas Majeris
-- [MagicMirror²](https://github.com/MichMich/MagicMirror)
+- [MagicMirror²](https://github.com/MagicMirrorOrg/MagicMirror)
 
 ## Installation
 
@@ -140,36 +140,36 @@ This can be used to show your traveled places in the world. Pretty fancy ;-)
 To use this module, add it to the modules array in the `config/config.js` file:
 
 ```javascript
-{
- module: "MMM-iHaveBeenThere",
- position: "middle_center",
- config: {
-  title: "Dork the Explorer",
-  home_desc: "Edinburgh",
-  AnimationEnabled: true,
-  zoomLevel: 1.1,
-  zoomLongitude: 15,
-  home_lat: 55.9411289,
-  home_lon: -3.3454172,
-  displayDesc: true,
-  away_desc: [
-   "Thailand",
-   "France",
-   "United States"
-  ],
-  away_lat: [
-   13.5485582,
-   48.8587741,
-   47.6129432,
-  ],
-  away_lon: [
-   100.6111107,
-   2.2069809,
-   -122.4821436,
-  ],
-  trip: [false,true,false],
- }
-},
+   {
+      module: "MMM-iHaveBeenThere",
+      position: "middle_center",
+      config: {
+         title: "Dork the Explorer",
+         home_desc: "Edinburgh",
+         AnimationEnabled: true,
+         zoomLevel: 1.1,
+         zoomLongitude: 15,
+         home_lat: 55.9411289,
+         home_lon: -3.3454172,
+         displayDesc: true,
+         away_desc: [
+            "Thailand",
+            "France",
+            "United States"
+         ],
+         away_lat: [
+            13.5485582,
+            48.8587741,
+            47.6129432,
+         ],
+         away_lon: [
+            100.6111107,
+            2.2069809,
+            -122.4821436,
+         ],
+         trip: [false,true,false],
+      }
+   },
 ```
 
 Depending on the used [Raspberry Pi](https://de.wikipedia.org/wiki/Raspberry_Pi) hardware I recommend to disable the plane animation (though it looks nice).
