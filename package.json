@@ -1,0 +1,40 @@
+{
+  "name": "mmm-ihavebeenthere",
+  "version": "1.1.0",
+  "description": "MagicMirror² module: Visualizes your places where you have been traveled or intend to go.",
+  "main": "MMM-iHaveBeenThere.js",
+  "repository": "basti0001/MMM-iHaveBeenThere",
+  "keywords": [
+    "MagicMirror",
+    "amChart",
+    "tavel",
+    "map"
+  ],
+  "author": "basti0001",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/basti0001/MMM-iHaveBeenThere/issues"
+  },
+  "homepage": "https://github.com/basti0001/MMM-iHaveBeenThere#readme",
+  "scripts": {
+    "lint": "eslint && markdownlint . --ignore node_modules && prettier --check .",
+    "lint:fix": "eslint --fix && markdownlint . --ignore node_modules --fix && prettier --write .",
+    "test": "npm run lint && npm run test:spelling",
+    "test:spelling": "cspell ."
+  },
+  "dependencies": {
+    "@amcharts/amcharts5": "^5.8.0",
+    "@amcharts/amcharts5-geodata": "^5.1.2",
+    "ammap3": "^3.21.15"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.25.0",
+    "@stylistic/eslint-plugin": "^4.2.0",
+    "cspell": "^8.19.2",
+    "eslint": "^9.25.0",
+    "eslint-plugin-import-x": "^4.10.6",
+    "globals": "^16.0.0",
+    "markdownlint-cli": "^0.44.0",
+    "prettier": "^3.5.3"
+  }
+}
